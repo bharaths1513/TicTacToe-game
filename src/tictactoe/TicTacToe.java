@@ -59,6 +59,7 @@ class tictac
 	        System.out.println("  -------------------");
 	        System.out.println("   "+board[7]+"   " + "|" +"   "+board[8]+ "   " + "|" +"   "+board[9]+ "   ");
 	}
+	
 	public void user_move()
 	{
 		System.out.println("Enter between(1-9) where you have to move ");
@@ -78,6 +79,20 @@ class tictac
 			}
 		}
 	}
+	public int toss()
+	{
+		int Toss = (int) (Math.random()*10)%2;
+		
+		if(Toss == 1)
+		{
+			System.out.println("player plays first");
+		}
+		else
+		{
+			System.out.println("computer plays first");
+		}
+		return Toss;
+	}
 }
 
 public class TicTacToe {
@@ -88,6 +103,7 @@ public class TicTacToe {
 		tictac o=new tictac();
 		o.init();
 		o.allow_player();
+		o.toss();
 		o.show_board();
 		o.user_move();
 	}
